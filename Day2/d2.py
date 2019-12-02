@@ -24,15 +24,14 @@ def partTwo():
     with open("input.txt", "r") as inputFile:
         for line in inputFile:
             data=[int(x) for x in line.strip().split(',')]
-            for x in range(0, 100):
-                tempData1=list(data)
-                tempData1[1]=x
-                for y in range(0, 100):
-                    tempData2=list(tempData1)
-                    tempData2[2]=y
-                    tempData2=dataOperation(tempData2)
-                    if tempData2:
-                        if tempData2[0]==19690720:
+            for x in range(100):
+                for y in range(100):
+                    tempData=list(data)
+                    tempData[1]=x
+                    tempData[2]=y
+                    tempData=dataOperation(tempData)
+                    if tempData:
+                        if tempData[0]==19690720:
                             print(str(x)+str(y))
                             return
                     else:
