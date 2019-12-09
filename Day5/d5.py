@@ -29,7 +29,7 @@ def dataOperation(data):
 
         thirdParamMode="0"
         if instruction:
-            thirdParaModem=instruction[-1]
+            thirdParamMode=instruction[-1]
         if (i+3)<len(data):
             if thirdParamMode=="0":
                 thirdParam=data[i+3]
