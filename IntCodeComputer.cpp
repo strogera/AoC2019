@@ -137,10 +137,18 @@ void IntCodeComputer::readProgram(std::string inputFilePath)
 
 void IntCodeComputer::run()
 {
-    while (memory[ip] != 99)
+    while (runSingleCommand())
+    {
+    }
+}
+
+bool IntCodeComputer::runSingleCommand()
+{
+    if (memory[ip] != 99)
     {
         ip = runCodeAt(ip);
     }
+    return memory[ip] != 99;
 }
 
 void IntCodeComputer::reset()
@@ -200,6 +208,11 @@ void IntCodeComputer::changeOpCodeAt(long long i, long long newValue)
 std::string IntCodeComputer::getLastOutput()
 {
     return outputHistory.empty() ? "" : std::to_string(outputHistory.back());
+}
+
+int IntCodeComputer::getOutputCount()
+{
+    return outputHistory.size();
 }
 
 void IntCodeComputer::setInputValue(long long newValue)

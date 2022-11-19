@@ -29,11 +29,13 @@ public:
     IntCodeComputer(int inputValue = 1);
     void readProgram(std::string);
     void run();
+    bool runSingleCommand();
     void reset();
     long long runCodeAt(long long);
     long long getOpCodeAt(long long);
     void changeOpCodeAt(long long, long long);
     std::string getLastOutput();
+    int getOutputCount();
     void setInputValue(long long);
 };
 #endif
