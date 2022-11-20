@@ -37,5 +37,6 @@ public:
     std::string getLastOutput();
     int getOutputCount();
     void setInputValue(long long);
+    void setMemoryAt(long long, long long);
 };
 #endif

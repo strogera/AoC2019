@@ -219,3 +219,8 @@ void IntCodeComputer::setInputValue(long long newValue)
 {
     inputValue = newValue;
 }
+
+void IntCodeComputer::setMemoryAt(long long i, long long value)
+{
+    memory[i] = value;
+}
